@@ -2,9 +2,9 @@ name: Security Analysis (CodeQL)
 
 on:
   push:
-    branches: [main]  # Atau sesuaikan dengan branch yang diinginkan
+    branches: [master]  # Atau sesuaikan dengan branch yang diinginkan
   pull_request:
-    branches: [main]  # Atau sesuaikan dengan branch yang diinginkan
+    branches: [master]  # Atau sesuaikan dengan branch yang diinginkan
 
 jobs:
   security-analysis:
