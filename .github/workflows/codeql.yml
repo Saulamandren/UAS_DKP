@@ -1,14 +1,14 @@
-name: Security Analysis (CodeQL)
+name: CodeQL Security Analysis
 
 on:
   push:
-    branches: [master]  # Atau sesuaikan dengan branch yang diinginkan
+    branches: [master]
   pull_request:
-    branches: [master]  # Atau sesuaikan dengan branch yang diinginkan
+    branches: [master]
 
 jobs:
   security-analysis:
-    name: Run CodeQL analysis
+    name: Run CodeQL Analysis
     runs-on: ubuntu-latest
 
     steps:
@@ -18,7 +18,7 @@ jobs:
       - name: Set up CodeQL
         uses: github/codeql-action/init@v2
         with:
-          languages: 'javascript'  # Ganti dengan bahasa yang Anda gunakan, seperti python, java, ruby, dll.
+          languages: 'javascript'  # Ganti sesuai bahasa pemrograman Anda
 
       - name: Perform CodeQL analysis
         uses: github/codeql-action/analyze@v2
@@ -26,5 +26,3 @@ jobs:
       - name: Upload CodeQL results
         uses: github/codeql-action/upload-results@v2
         if: always()
-        with:
-          upload_url: ${{ github.server_url }}/upload/codeql-results/${{ github.run_id }}
