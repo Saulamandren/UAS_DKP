@@ -16,9 +16,9 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Set up CodeQL
-        uses: github/codeql-action/init@v2
+        uses: github/codeql-action/init@v1
         with:
-          languages: 'javascript'  # Ganti sesuai bahasa pemrograman Anda
+          languages: 'PHP'  # Ganti sesuai bahasa pemrograman Anda
 
       - name: Perform CodeQL analysis
         uses: github/codeql-action/analyze@v2
