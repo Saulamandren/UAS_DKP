@@ -2,9 +2,9 @@ name: CodeQL Security Analysis
 
 on:
   push:
-    branches: [master]  # Menyesuaikan dengan branch master
+    branches: [master]  # Sesuaikan dengan branch master
   pull_request:
-    branches: [master]  # Menyesuaikan dengan branch master
+    branches: [master]  # Sesuaikan dengan branch master
 
 jobs:
   security-analysis:
@@ -18,11 +18,10 @@ jobs:
       - name: Set up CodeQL
         uses: github/codeql-action/init@v2
         with:
-          languages: 'php'  # Menyesuaikan dengan bahasa pemrograman PHP
+          languages: php  # Menyesuaikan dengan bahasa pemrograman PHP
+
+      # Kalau project PHP biasanya tidak perlu autobuild,
+      # tapi kalau ada build step bisa tambahkan di sini.
 
       - name: Perform CodeQL analysis
         uses: github/codeql-action/analyze@v2
-
-      - name: Upload CodeQL results
-        uses: github/codeql-action/upload-results@v2
-        if: always()
